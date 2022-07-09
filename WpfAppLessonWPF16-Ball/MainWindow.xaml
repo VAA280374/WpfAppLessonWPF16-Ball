@@ -1,0 +1,39 @@
+﻿<Window x:Class="WpfAppLessonWPF16_Ball.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppLessonWPF16_Ball"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="300">
+    <Canvas>
+        <Ellipse Height="52" 
+                 Canvas.Left="120" 
+                 Stroke="Black" 
+                 Canvas.Top="350" 
+                 Width="52">
+            <Ellipse.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFB5B1B1" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+            <Ellipse.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)"
+                                             Duration="0:0:7"
+                                             RepeatBehavior="Forever"
+                                             DecelerationRatio="1.0"
+                                             AutoReverse="True"
+                                             From="350"
+                                             To="50"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger> 
+            </Ellipse.Triggers>
+        </Ellipse>
+
+    </Canvas>
+</Window>
